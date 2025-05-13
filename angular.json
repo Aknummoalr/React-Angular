@@ -60,6 +60,36 @@
           },
           "defaultConfiguration": "production"
         },
+        "webcomponent":{
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/webcomponent",
+            "index": "src/index.html",
+            "browser": "src/main.webcomponent.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "none",
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
+            }
+          }
+        },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
